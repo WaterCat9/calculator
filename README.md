@@ -1,6 +1,6 @@
 # calculator
 
-[![Java CI](https://github.com/WaterminCat/calculator/actions/workflows/maven.yml/badge.svg)](https://github.com/WaterminCat/calculator/actions/workflows/maven.yml)
+[![Java CI](https://github.com/WaterCat9/calculator/actions/workflows/maven.yml/badge.svg)](https://github.com/WaterCat9/calculator/actions/workflows/maven.yml)
 
 A command-line calculator built in Java.
 
