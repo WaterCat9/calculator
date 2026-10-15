@@ -10,7 +10,7 @@ public class Calculator {
         double x=Double.parseDouble(a);
         double y=Double.parseDouble(b);
         return switch (op) {
-            case "+" -> x + y;
+            case "+" -> x - y;
             case "-" -> x - y;
             case "*" -> x * y;
             case "/" -> {
