@@ -1,5 +1,6 @@
 name: Java CI
 
+# Trigger rules: run on push to main, and on pull requests targeting main.
 on:
   push:
     branches: [main]
@@ -7,6 +8,7 @@ on:
     branches: [main]
 
 jobs:
+  # Job 1: compile and run all JUnit tests (kept from Lab5, do not remove).
   build:
     runs-on: ubuntu-latest
     strategy:
@@ -21,3 +23,12 @@ jobs:
           cache: maven
       - run: mvn -B clean compile
       - run: mvn -B test
+
+  # Job 2 (new in Lab6): build the Docker image after the unit tests pass.
+  docker-build:
+    runs-on: ubuntu-latest
+    needs: build          # only starts after job "build" succeeds
+    steps:
+      - uses: actions/checkout@v4   # fetch the repository, which includes the Dockerfile
+      - name: Build Docker image
+        run: docker build -t calculator:v1 .
