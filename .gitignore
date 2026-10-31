@@ -6,3 +6,5 @@ target/
 .vscode/
 .DS_Store
 *.log
+# shade plugin generates this file next to pom.xml - do not commit it
+dependency-reduced-pom.xml
